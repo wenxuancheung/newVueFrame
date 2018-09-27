@@ -8,7 +8,6 @@ import axios from 'axios'
 import Es6Promise from 'es6-promise' //兼容安卓4.4以下依赖
 import VConsole from 'vconsole';
 import 'reset-css' //样式初始化
-import './lib/css/public.css'
 import './lib/js/setRem' //设置rem
 Es6Promise.polyfill() //兼容安卓4.4以下
 Vue.config.productionTip = false
