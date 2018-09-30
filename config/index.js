@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/seekFunBookPAD': {
-        target: 'http://119.145.5.70:8083',
+      '/': {
+        target: '',
         changeOrigin: true,
       }
     },

@@ -2,8 +2,6 @@ import Vue from 'vue'
 
 import CryptoJS from 'crypto-js'
 
-import axios from 'axios'
-
 export default {
     install(Vue, options) {
         //时间戳转具体日期 time：时间戳 format:要转化的格式
