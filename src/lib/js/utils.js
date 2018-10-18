@@ -97,7 +97,7 @@ export default {
             var after = window.location.hash.split("?")[1]
                 if(after)
                 {
-                    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)")
+                    var reg = new RegExp("(^|&)"+ key +"=([^&]*)(&|$)")
                     var r = after.match(reg)
                     if(r != null)
                     {
@@ -107,6 +107,11 @@ export default {
                     {
                         return null
                     }
+                }else{
+                    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]);
+                    return null;
                 }
         },
         //与app交互分享信息和显示隐藏分享按钮方法（传参） fun:方法 1：share显示隐藏分享按钮 2:loadShareInfo 分享信息 shareInfo：分享内容
