@@ -37,5 +37,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  -webkit-overflow-scrolling: touch;
 }
 </style>

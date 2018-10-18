@@ -69,6 +69,24 @@ export default {
                 iFrame = null
             },10)
         },
+        //设置title
+        Vue.prototype.setTitle = function(title) {
+            document.title = title;
+            const Navigator = navigator.userAgent
+            const isiPad = (Navigator.match(/(iPad).*OS\s([\d_]+)/)) ? true : false
+            const isiPhone = (!isiPad && Navigator.match(/(iPhone\sOS)\s([\d_]+)/)) ? true : false
+            // if (isiPhone) {
+                let iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = 'about:blank';
+                iframe.onload = () => {
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                    }, 100);
+                };
+                document.body.appendChild(iframe)
+            // }
+        },
         //3DES加密 message:加密值 key:密钥,iv:偏移
         Vue.prototype.encryptTripleDes = function(message,key,iv){
             const keyHex = CryptoJS.enc.Utf8.parse(key);
